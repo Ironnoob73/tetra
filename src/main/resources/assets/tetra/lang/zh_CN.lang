@@ -4,7 +4,15 @@ itemGroup.tetra=Tetra
 # WORKBENCH
 ###############################
 workbench.schema_list.empty=选定格子无升级可用。
-workbench.repair=修理
+workbench.slot_detail.details_tab=细节
+workbench.slot_detail.craft_tab=制作
+workbench.slot_detail.tweak_tab=调整
+workbench.slot_detail.tweak_apply=应用
+workbench.module_detail.empty=空槽
+workbench.module_detail.not_tweakable=调整不可用
+repair_action.label=修理
+workbench.schema_detail.experience=此操作需要%d经验等级
+workbench.schema_list.temporary=由背包中的物品提供
 
 ###############################
 # MISC
@@ -17,6 +25,12 @@ item.modular.integrity_usage=完整度：%d/%d
 workbench.schema_detail.craft=合成
 workbench.schema_detail.back=返回
 
+item.modular.empty_slot=空
+item.modular.magic_capacity.label=魔法容量
+item.modular.magic_capacity.description=此模块可能拥有的魔法量以及正在使用的魔法量。\n可能会超出容量，但使用模块会消耗经验，而魔法改进可能会在物品被更改时破坏稳定性并造成负面影响。\n\n§7魔法容量：§e%s\n§7容量使用情况：§e%s
+item.modular.repair_material.label=修理材料：
+item.modular.repair_material.empty=无需修理
+
 ###############################
 # ITEM NAMES
 ###############################
@@ -25,14 +39,75 @@ item.rocket_boots.name=火箭靴子
 ###############################
 # GEODE
 ###############################
+tile.block_geode.name=晶洞
+break_geode_action.label=裂开
 tetra.general.geode_generate=生成晶洞玉石
 tetra.general.geode_generate.tooltip=可以开关晶洞玉石的生成。已经生成的区块依旧会保留晶洞玉石。§o需要重启游戏。§r
 tetra.general.geode_contents=晶洞内容
 tetra.general.geode_contents.tooltip=配置当晶洞被破坏时能够获得什么物品。配置数值分为三组：物品ID，最大数量，权重。最大数量指的是破坏晶洞时候能够获得的最大数量物品，权重标定着物品发现的几率。
 item.geode.name=晶洞玉石
 item.geode.tooltip=在工作台上破开，可能得到有价值的材料。
-item.geode.label=裂开
 
+item.pristine_diamond.name=原始钻石
+shatter_diamond_action.label=粉碎
+item.pristine_emerald.name=原始绿宝石
+shatter_emerald_action.label=粉碎
+item.pristine_lapis.name=原始青金石
+shatter_lapis_action.label=粉碎
+###############################
+# THERMAL CELL
+###############################
+item.magmatic_cell.name=热电池
+item.magmatic_cell.charge=已充能：%s
+item.magmatic_cell.charge_full=§a满
+item.magmatic_cell.charge_good=§a良
+item.magmatic_cell.charge_low=§e低
+item.magmatic_cell.charge_empty=§c空
+###############################
+# ANCIENT TILESET
+###############################
+tile.forged_pillar.name=锻造柱
+tile.forged_platform.name=锻造平台
+tile.forged_platform_slab.name=锻造台阶
+tile.forged_wall.name=锻造墙
+tile.forged_vent.name=锻造通风管
+tile.forged_crate.name=锻造板条箱
+
+tile.forged_container.name=锻造容器
+forged_container.compartment=容量 %s
+
+tile.hammer_base.name=锤子底座
+tile.hammer_head.name=锤头
+
+tile.transfer_unit.name=输送单元
+tile.core_extractor.name=核心提取器
+tile.extractor_piston.name=提取器活塞
+tile.extractor_pipe.name=提取器管道
+tile.seeping_bedrock.name=渗漏的基岩
+
+item.forged_bolt.name=螺栓
+salvage_bolt_action.label=安装
+
+item.forged_beam.name=结构梁
+salvage_beam_action.label=安装
+
+item.forged_mesh.name=柔性网格
+salvage_mesh_action.label=安装
+
+item.quick_latch.name=快速闩锁
+item.quick_latch.description=显示背包中的相关升级架构。
+salvage_quick_latch_action_hammer.label=安装
+salvage_quick_latch_action_pry.label=安装
+
+item.metal_scrap.name=金属碎片
+item.metal_scrap.description=一小块金属，它们的用途无从得知，等待着被重新利用
+salvage_metal_scrap_action.label=安装
+
+item.vent_plate.name=排气板
+item.vent_plate.description=将其重新连接到机器上以略微提高效率。
+salvage_vent_plate_action.label=安装
+
+forged_description=发现于白雪皑皑的生物群系地下深处的结构中
 ###############################
 # SWORD
 ###############################
@@ -64,6 +139,7 @@ toolbelt/belt=腰带
 ###############################
 repair_schema.name=修理
 repair_schema.description=使用各种材料修复物品。
+repair_schema.description_details=修补损坏和磨损的部件。循环各部件，一次修复一个部件。\n\n§7部件：§f%s\n§7修复耐久：§f%s
 
 ###############################
 # REMOVE SCHEMA
@@ -106,7 +182,32 @@ enchantment/fortune.description=当破坏方块时候增加掉落物
 enchantment/silk_touch.name=精准采集
 enchantment/silk_touch.description=精准采集方块
 
-
+destabilized/haunted.name=§5Destabilized: Haunted
+destabilized/haunted.description=This module has been haunted and will sometimes turn against the item's wielder! Will disappear over time.
+destabilized/fire_aspect.name=§5Destabilized: Fire Aspect
+destabilized/fire_aspect.description=Using this may set you on fire, more sever in hot environments
+destabilized/looting.name=§5Destabilized: Looting
+destabilized/looting.description=Reduces effectiveness of looting effects
+destabilized/unbreaking.name=§5Destabilized: Unbreaking
+destabilized/unbreaking.description=Reduces effectiveness of unbreaking effects
+destabilized/sharpness.name=§5Destabilized: Sharpness
+destabilized/sharpness.description=Decreases damage dealt
+destabilized/smite.name=§5Destabilized: Smite
+destabilized/smite.description=Reduces effectiveness of smite effects
+destabilized/bane_of_arthropods.name=§5Destabilized: Bane of Arthropods
+destabilized/bane_of_arthropods.description=Reduces effectiveness of bane of arthropods
+destabilized/knockback.name=§5Destabilized: Knockback
+destabilized/knockback.description=Reduces effectiveness of knockback effects
+destabilized/mending.name=§5Destabilized: Mending
+destabilized/mending.description=Reduces effectiveness of mending effects
+destabilized/sweeping.name=§5Destabilized: Sweeping Edge
+destabilized/sweeping.description=Reduces sweeping strike range
+destabilized/efficiency.name=§5Destabilized: Efficiency
+destabilized/efficiency.description=Reduces efficiency
+destabilized/fortune.name=§5Destabilized: Fortune
+destabilized/fortune.description=Reduces effectiveness of fortune effects
+cleanse_schema.name=Cleanse
+cleanse_schema.description=Cleanse negative effects caused by magic instability.\n\nExperience cost is increased based on exceeded magic capacity and the amount of instability effects.
 ###############################
 # BASIC BLADE
 ###############################
@@ -114,7 +215,9 @@ basic_blade_schema.name=简易剑刃
 basic_blade_schema.description=用给定的剑刃替换当前的剑刃，或者用原材料重铸它。
 basic_blade_schema.slot1=剑刃材料
 
+sword/basic_blade.item_name=剑
 sword/basic_blade.name=剑
+sword/basic_blade.description=具有平均伤害、攻击速度和完整性使用率的基本刀片。
 
 basic_blade/oak=橡木剑刃
 basic_blade/oak.prefix=橡木
@@ -725,6 +828,16 @@ duplex/axe_pickaxe=錾斧
 duplex/hammer_pickaxe=地质锤
 duplex/adze_pickaxe=鹤嘴锄
 duplex/adze_axe=切割型鹤嘴锄
+duplex/claw_hammer=羊角锤
+duplex/claw_axe=木匠斧
+#Vanilla
+duplex/pickaxe_pickaxe=镐
+duplex/axe_butt=斧
+duplex/hoe_butt=锄
+#Joke
+duplex/hoe_hoe=假镐
+duplex/pickaxe_hoe=锄镐
+
 
 ###############################
 # HAMMER HANDLE
@@ -925,7 +1038,7 @@ butt/knightmetal=骑士金属尾部
 ###############################
 basic_hammer_schema.name=锤
 basic_hammer_schema.description=用给定的材料锻造锤。锤子有助于升级其他东西。
-basic_hammer_schema.slot1=头部材料
+basic_hammer_schema.slot1=锤头材料
 
 
 basic_hammer/log=木制锤
@@ -982,7 +1095,7 @@ basic_hammer/knightmetal.prefix=骑士金属
 ###############################
 adze_schema.name=扁斧
 adze_schema.description=用给定的材料锻造扁斧，扁斧是砍伐和挖掘的两用工具。
-adze_schema.slot1=头部材料
+adze_schema.slot1=扁斧材料
 
 
 adze/oak=木制扁斧
@@ -1042,6 +1155,74 @@ adze/fierymetal.prefix=炽铁
 adze/knightmetal=骑士金属扁斧
 adze/knightmetal.name=扁斧
 adze/knightmetal.prefix=骑士金属
+
+###############################
+# CLAW HEAD
+###############################
+claw_schema.name=羊角
+claw_schema.description=用给定的材料锻造羊角。羊角可以用来撬开东西并快速打破大多数木块。
+claw_schema.slot1=羊角材料
+
+duplex/claw.name=羊角
+duplex/claw.description=略微弯曲的爪子，可以用来撬开东西，可以迅速打破大多数木块。
+
+claw/oak=木制羊角
+claw/oak.name=羊角
+claw/oak.prefix=橡木
+claw/cobblestone=圆石羊角
+claw/cobblestone.name=羊角
+claw/cobblestone.prefix=圆石
+claw/flint=燧石羊角
+claw/flint.name=羊角
+claw/flint.prefix=燧石
+claw/iron=铁羊角
+claw/iron.name=羊角
+claw/iron.prefix=铁
+claw/diamond=钻石羊角
+claw/diamond.name=羊角
+claw/diamond.prefix=钻石
+claw/gold=金羊角
+claw/gold.name=羊角
+claw/gold.prefix=金
+claw/copper=铜羊角
+claw/copper.name=羊角
+claw/copper.prefix=铜
+claw/tin=锡羊角
+claw/tin.name=羊角
+claw/tin.prefix=锡
+claw/silver=银羊角
+claw/silver.name=羊角
+claw/silver.prefix=银
+claw/nickel=镍羊角
+claw/nickel.name=羊角
+claw/nickel.prefix=镍
+claw/lead=铅羊角
+claw/lead.name=羊角
+claw/lead.prefix=铅
+claw/bronze=青铜羊角
+claw/bronze.name=羊角
+claw/bronze.prefix=青铜
+claw/electrum=琥珀金羊角
+claw/electrum.name=羊角
+claw/electrum.prefix=琥珀金
+claw/steel=钢羊角
+claw/steel.name=羊角
+claw/steel.prefix=钢
+claw/thaumium=神秘羊角
+claw/thaumium.name=羊角
+claw/thaumium.prefix=神秘
+claw/ironwood=铁木羊角
+claw/ironwood.name=羊角
+claw/ironwood.prefix=铁木
+claw/steeleaf=钢叶羊角
+claw/steeleaf.name=羊角
+claw/steeleaf.prefix=钢叶
+claw/fierymetal=炽铁羊角
+claw/fierymetal.name=羊角
+claw/fierymetal.prefix=炽铁
+claw/knightmetal=骑士金属羊角
+claw/knightmetal.name=羊角
+claw/knightmetal.prefix=骑士金属
 
 ###############################
 # HOE HEAD
@@ -1289,4 +1470,548 @@ booster_schema.name=助推
 booster_schema.description=附加一个助推单元，能够跳跃很远的距离，甚至短时间进行飞行。在跳跃前蹲下，或在空中跳跃，亦或用鞘翅飞行进行激活。§o以火药为燃料。
 booster_schema.slot1=材料
 
+toolbelt/booster.name=Booster
+toolbelt/booster.description=A booster unit which grants the ability to jump long distances or even fly for shorter periods of time. Activate by crouching before a jump, or by jumping mid air or while flying with an elytra. §oUses gunpowder from toolbelt inventories as fuel.
+
 booster/iron=助推单元
+###############################
+# CONFIG TOOLTIPS
+###############################
+tetra.general.geodegenerate=Generate geodes
+tetra.general.geodegenerate.tooltip=Toggle off to disable generation of geodes. Already generated chunks may still contain geodes. §oRequires restart.§r
+tetra.general.generatefeatures=Generate features
+tetra.general.generatefeatures.tooltip=Enables generation of terrain features such as ancient ruins. Will not remove already generated features when disabled. §oRequires restart.§r
+tetra.general.maxfeaturedepth=Max feature depth
+tetra.general.maxfeaturedepth.tooltip=Used to limit how deep the feature generator will recurse into feature children, helps to avoid recursive loops and cascading worldgen in 3d-party generation features.
+tetra.general.development=Development mode
+tetra.general.development.tooltip=Puts tetra in development mode, causing several configuration files to be reloaded continously and initializes rendering of structure helpers. Enabling will have a negative impact on performance. §oRequires restart.§r
+tetra.general.moduleprogression=Module progression
+tetra.general.moduleprogression.tooltip=Allows tetra items to "level up" after being used a certain amount of times, allowing the player to choose from different ways to "hone" 1 module on the item. Major modules also settle after some time, increasing its integrity.
+tetra.general.workbenchdroptable=Workbench drop table
+tetra.general.workbenchdroptable.tooltip=Enabling cause the workbench to drop itself as an item when broken, rather than dropping the vanilla crafting bench.
+tetra.general.settlelimitbase=Settle limit base
+tetra.general.settlelimitbase.tooltip=The base value for number of uses required for a module to settle.
+tetra.general.settlelimitlevelmultiplier=Settle limit level multiplier
+tetra.general.settlelimitlevelmultiplier.tooltip=Level multiplier for settling limit. A value of 3 would cause a module that has settled once to require 3x as many uses before it settles again.
+tetra.general.settlelimitdurabilitymultiplier=Settle limit durability multiplier
+tetra.general.settlelimitdurabilitymultiplier.tooltip=Durability multiplier for settling limit. A value of 1 would cause a module with 75 durability to require an additional 75 uses before it settles.
+tetra.general.honeswordbase=Hone limit base - sword
+tetra.general.honeswordbase.tooltip=The base value for number of uses required before a sword can be honed.
+tetra.general.honeswordintegritymultiplier=Hone limit multiplier - sword
+tetra.general.honeswordintegritymultiplier.tooltip=Integrity multiplier for sword honing. A value of 2 would cause a sword which uses 3 integrity to require a 2*3 times as many uses before it can be honed.
+tetra.general.honeduplexbase=Hone limit base - tools
+tetra.general.honeduplexbase.tooltip=The base value for number of uses required before a tool can be honed.
+tetra.general.honeduplexintegritymultiplier=Hone limit multiplier - tools
+tetra.general.honeduplexintegritymultiplier.tooltip=Integrity multiplier for tool honing. A value of 2 would cause a sword which uses 3 integrity to require a 2*3 times as many uses before it can be honed.
+
+###############################
+# JOURNAL
+###############################
+item.journal.name=全息球
+item.journal.tooltip1=轻轻一碰，球体就会将图表和字形投射到虚无上。
+item.journal.tooltip2=【右键使用】
+journal.craft.breadcrumb.root=物品
+journal.craft.sword=刀剑
+journal.craft.toolbelt=工具带
+journal.craft.tool=工具
+journal.craft.slot=格
+journal.craft.requirements=依赖
+journal.craft.improvements=改进
+journal.craft.stats=状态
+journal.craft.variants=变种
+
+###############################
+# CAPABILITIES
+###############################
+capability.hammer=锤
+capability.hammer.requirement=此操作需要等级为%d的锤
+capability.axe=斧
+capability.axe.requirement=此操作需要等级为%d的斧
+capability.pickaxe=镐
+capability.pickaxe.requirement=此操作需要等级为%的镐
+capability.shovel=铲
+capability.shovel.requirement=此操作需要等级为%的铲
+capability.cut=刃
+capability.cut.requirement=此操作需要等级为%d的切割工具
+capability.pry=撬
+capability.pry.requirement=此操作需要等级为%d的撬
+capability.available=你有等级%d可用
+###############################
+# STATS
+###############################
+stats.efficiency_suffix=效率
+stats.strength_suffix=力量
+stats.tier_suffix=等
+stats.level_suffix=级
+stats.durability=耐久
+stats.durability.tooltip=这个物品耐久为§e%s
+stats.speed=速度
+stats.speed.tooltip=影响此物品的挥动速度\n\n§e%s §7秒/每次挥动间隔\n§ex%s§7 速度倍增
+stats.speed_normalized=速度
+stats.speed_normalized.tooltip=由§e%s§r改变攻击速度
+stats.damage=伤害
+stats.damage.tooltip=造成§e%s伤害
+stats.bleeding=流血
+stats.bleeding.tooltip=攻击生物有30%%的概率造成流血，§e%s§r伤害，超过两秒
+stats.backstab=背刺
+stats.backstab.tooltip=从实体背后攻击造成§e%s§r额外伤害
+stats.armor=护甲
+stats.armor.tooltip=在手持时增加§e%s§r护甲
+stats.armorPenetration=穿透
+stats.armorPenetration.tooltip=击中实体总是至少造成§e%s§r伤害，无论目标护甲如何
+stats.unarmoredDamage=切断
+stats.unarmoredDamage.tooltip=攻击没有护甲的实体时造成§e%s§r额外伤害
+stats.knockback=击退
+stats.knockback.tooltip=Increases how far hit entities are knocked back by a factor of §e%s
+stats.looting=Looting
+stats.looting.tooltip=Increases drops from killing entities
+stats.fiery=Fiery
+stats.fiery.tooltip=Hitting an entity sets it on fire for §e%s§r seconds
+stats.smite=Smite
+stats.smite.tooltip=Deals §e%s§r bonus damage when attacking undead entities
+stats.arthropod=Arthropod
+stats.arthropod.tooltip=Deals §e%s§r bonus damage when attacking an arthropod and applies slowness IV for 1 to §e%s§r seconds
+stats.sweeping=Sweeping
+stats.sweeping.tooltip=Attacking an entity also hits all adjacent enemies for §e%s§r weapon damage
+stats.unbreaking=Unbreaking
+stats.unbreaking.tooltip=Has a chance to not take durability damage on use\n\n§7Unbreaking level: §e%s§7\nAvoid chance: §e%s%%
+stats.mending=Mending
+stats.mending.tooltip=Consumes gathered experience orbs to repair durability by §e%s§r per experience point\n\n§7Only active while held in the mainhand or the offhand
+stats.silkTouch=Silktouch
+stats.silkTouch.tooltip=Harvesting blocks cause the block to drop instead of the usual item
+stats.fortune=Fortune
+stats.fortune.tooltip=Increases drop chance when harvesting or salvaging blocks
+stats.quickStrike=Quick
+stats.quickStrike.tooltip=Reduces the minimum damage dealt to §e%s§r while the attack cooldown is active
+stats.softStrike=Soft strike
+stats.softStrike.tooltip=Items crafted using this tool gains increased durability
+stats.fierySelf=Blazing
+stats.fierySelf.tooltip=Using the item has a chance to set the wielder on fire, occurs less frequent in cold biomes\n\n§7Base chance: §e%s§7\nFire duration: §e%s
+stats.enderReverb=Reverb
+stats.enderReverb.tooltip=Using the item angers nearby endermen and nearby ender teleportation has a chance to also teleport the wielder\n\n§7Base chance: §e%s§7
+stats.toolbelt.quickslot.tooltip=Has §e%s§r quickslots
+stats.toolbelt.potion_storage.tooltip=Has §e%s§r potion slots
+stats.toolbelt.storage.tooltip=Has §e%s§r storage slots
+stats.toolbelt.quiver.tooltip=Has §e%s§r quiver slots
+stats.toolbelt.booster=Boost strength
+stats.toolbelt.booster.tooltip=Provides jump boost and limited flight with strength §e%s
+stats.criticalStrike=Crit
+stats.criticalStrike.tooltip=Has a chance to critically hit when hitting entities or breaking blocks.\n\n§e%s§7 chance to deal §e%s §7damage\n§e%s§7 chance to instantly break blocks\n\n§7This effect cannot occur for blocks that are exceptionally hard
+stats.intuit=Intuit
+stats.intuit.tooltip=Experience gained from killing entities and destroying blocks yields honing progress at a §e%sx§r ratio
+stats.magicCapacity=Magic capacity
+stats.magicCapacity.tooltip=The amount of magic that the module may hold, this capacity is utilized by improvement such as enchantments.\n\n§7Magic capacity: §e%s
+stats.hammer.tooltip=This item can be used for hammering, usable when crafting and salvaging\n\n§7Hammer tier: §e%s\n§7Hammer efficiency: §e%s
+stats.axe.tooltip=This item can be used for chopping wood\n\n§7Axe tier: §e%s\n§7Axe efficiency: §e%s
+stats.pickaxe.tooltip=This item can be used for mining\n\n§7Pickaxe tier: §e%s\n§7Pickaxe efficiency: §e%s
+stats.shovel.tooltip=This item can be used for digging\n\n§7Shovel tier: §e%s\n§7Shovel efficiency: §e%s
+stats.cut.tooltip=This item can be used for cutting, usable for crafting and for breaking webs and plants\n\n§7Cut tier: §e%s\n§7Cut efficiency: §e%s
+stats.pry.tooltip=This item can be used for prying things open, usable for salvaging\n\n§7Pry tier: §e%s\n§7Pry efficiency: §e%s
+stats.integrity=Integrity
+stats.integrity.tooltip_positive=This module provides §e%s§r integrity
+stats.integrity.tooltip_negative=This module requires §e%s§r integrity
+stats.integrity_usage=完整性：%s/%s
+stats.integrity_usage.tooltip=完整性由某些模块（通常在特定的槽位中）提供，而其他模块和大多数改进都需要完整性。
+
+###############################
+# MODULE PROGRESSION
+###############################
+item.modular.settle_progress.label=稳定进度
+item.modular.settle_progress_gain.description=当物品被使用时，该模块将慢慢到位，一旦稳定下来，它将提供额外的完整性。\n\n§7进度：§e%s§7/§e%s\n\n§7需求基础：§e%s\n§7耐久惩罚：§e%s
+item.modular.settle_progress_cost.description=当物品被使用时，该模块将慢慢稳定到位，一旦稳定下来，其完整性成本将降低。\n\n§7进度：§e%s§7/§e%s\n\n§7需求基础：§e%s\n§7耐久惩罚：§e%s
+item.modular.settle_full.label=完全稳定！
+item.modular.settle_full_gain.description=该模块已完全稳定，它提供了额外的完整性
+item.modular.settle_full_cost.description=该模块已完全稳定，其完整性成本降低
+item.modular.settle_full_null.label=完全稳定
+item.modular.settle_full_null.description=该模块的简单性使其易于安装到位，并且不需要进一步稳定
+settled.name=稳定
+settled.description=由于延长了使用时间，该模块已就位，它提供了额外的完整性
+settled.toast=模块已稳定！
+arrested.name=不可稳定
+arrested.description=该模块由不会随着时间的推移而稳定的材料制成
+hone.progress=打磨进度：%s%%
+hone.available=可以打磨
+###############################
+# SYNERGY
+###############################
+item.modular.synergy_indicator.empty=This module has no potential synergy bonuses
+item.modular.synergy_indicator.header=Synergy bonuses:
+
+blade_hone_damage_1_schema.name=Hone: Damage I
+blade_hone_damage_1_schema.description=Hone the module to increase the damage dealt by 0.5.
+blade_hone_damage_2_schema.name=Hone: Damage II
+blade_hone_damage_2_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 0.5 to 1.
+blade_hone_damage_3_schema.name=Hone: Damage III
+blade_hone_damage_3_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1 to 1.5.
+blade_hone_damage_4_schema.name=Hone: Damage IV
+blade_hone_damage_4_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1.5 to 2.
+blade_hone_damage_5_schema.name=Hone: Damage V
+blade_hone_damage_5_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 2 to 3.
+blade_hone/damage.name=Hone: Damage
+blade_hone/damage.description=Increases damage dealt
+blade_hone_speed_1_schema.name=Hone: Speed I
+blade_hone_speed_1_schema.description=Hone the module to increase the overall swing speed by 7%%.
+blade_hone_speed_2_schema.name=Hone: Speed II
+blade_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 7%% to 15%%.
+blade_hone_speed_3_schema.name=Hone: Speed III
+blade_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 15%% to 22%%.
+blade_hone_speed_4_schema.name=Hone: Speed IV
+blade_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 22%% to 30%%.
+blade_hone_speed_5_schema.name=Hone: Speed V
+blade_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 30%% to 40%%.
+blade_hone/speed.name=Hone: Speed
+blade_hone/speed.description=Increases swing speed
+hilt_hone_damage_1_schema.name=Hone: Damage I
+hilt_hone_damage_1_schema.description=Hone the module to increase the overall damage by 5%%.
+hilt_hone_damage_2_schema.name=Hone: Damage II
+hilt_hone_damage_2_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 5%% to 10%%.
+hilt_hone_damage_3_schema.name=Hone: Damage III
+hilt_hone_damage_3_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 10%% to 15%%.
+hilt_hone_damage_4_schema.name=Hone: Damage IV
+hilt_hone_damage_4_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 15%% to 20%%.
+hilt_hone_damage_5_schema.name=Hone: Damage V
+hilt_hone_damage_5_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 20%% to 25%%.
+hilt_hone/damage.name=Hone: Damage
+hilt_hone/damage.description=Increases damage dealt
+hilt_hone_speed_1_schema.name=Hone: Speed I
+hilt_hone_speed_1_schema.description=Hone the module to increase the overall swing speed by 0.05.
+hilt_hone_speed_2_schema.name=Hone: Speed II
+hilt_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.05 to 0.1.
+hilt_hone_speed_3_schema.name=Hone: Speed III
+hilt_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.1 to 0.15.
+hilt_hone_speed_4_schema.name=Hone: Speed IV
+hilt_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.15 to 0.2.
+hilt_hone_speed_5_schema.name=Hone: Speed V
+hilt_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.2 to 0.25.
+hilt_hone/speed.name=Hone: Speed
+hilt_hone/speed.description=Increases swing speed
+blade_hone_serrated_2_schema.name=Hone: Serrated II
+blade_hone_serrated_2_schema.description=Hone the serrated improvement, increases the damage dealt to 8.
+blade_hone_serrated_3_schema.name=Hone: Serrated III
+blade_hone_serrated_3_schema.description=Further hone the serrated improvement, increases the damage dealt to 16.
+blade_hone_tempered_2_schema.name=Hone: Tempered II
+blade_hone_tempered_2_schema.description=Hone the tempered improvement, increases the amount of damage that penetrates armor to 3.
+blade_hone_tempered_3_schema.name=Hone: Tempered III
+blade_hone_tempered_3_schema.description=Further hone the serrated improvement, increases the amount of damage that penetrates armor to 5.
+blade_hone_hooked_2_schema.name=Hone: Hooked II
+blade_hone_hooked_2_schema.description=Hone the hooked improvement, increases the bonus damage dealt when hitting enemies from behind to 75%%.
+blade_hone_hooked_3_schema.name=Hone: Hooked III
+blade_hone_hooked_3_schema.description=Further hone the hooked improvement, increases the bonus damage dealt when hitting enemies from behind to 125%%.
+sword/basic_hilt.name=Simple hilt
+sword/basic_hilt.description=A simple sword hilt. The sword hilt is the primary source of integrity for swords.
+basic_hilt/acacia=Acacia hilt
+basic_hilt/forged_beam=Repurposed beam
+basic_hilt/blazing.name=Blazing
+basic_hilt/blazing.description=Using this may set you on fire, more sever in hot environments
+basic_hilt/ender_reverb.name=Ender reverb
+basic_hilt/ender_reverb.description=Reacts negatively with nearby entities originating from the end
+basic_hilt/wrap_string.name=String wrap
+basic_hilt/wrap_string.description=Slightly increases damage and speed, reduces negative hilt effects.
+basic_hilt/wrap_leather.name=Leather wrap
+basic_hilt/wrap_leather.description=Slightly increases damage and speed, reduces negative hilt effects.
+basic_hilt/wrap_hide.name=Hide wrap
+basic_hilt/wrap_hide.description=Slightly increases damage and speed, reduces negative hilt effects.
+basic_hilt/wrap_vine.name=Vine wrap
+basic_hilt/wrap_vine.description=Slightly increases damage and speed, reduces negative hilt effects.
+wrap_hilt_schema.name=Wrap hilt
+wrap_hilt_schema.slot1=Material
+wrap_hilt_schema.description=Wrap the hilt using the provided materials. Slighly increases damage and speed, and reduces negative effects potentially caused by the hilt.
+wrap_hilt_hone_1_schema.name=Hone: Wrap II
+wrap_hilt_hone_1_schema.slot1=Material
+wrap_hilt_hone_1_schema.description=Improve the hilt wrap, further increasing damage and speed, and reducing negative effects.
+wrap_hilt_hone_2_schema.name=Hone: Wrap III
+wrap_hilt_hone_2_schema.slot1=Material
+wrap_hilt_hone_2_schema.description=Further improve the hilt wrap, increasing damage and speed, and reducing negative effects.
+sword/decorative_pommel.name=Decorative pommel
+sword/decorative_pommel.description=A decorative pommel, it provides a small amount of durability but has no functional value.
+sword/makeshift_guard.name=Makeshift guard
+sword/makeshift_guard.description=A sword guard, its weak construction provides little protection for the wielding hand.
+sword/wide_guard.name=Wide guard
+sword/wide_guard.description=a wide guard which protects the wielding hand. Provides additional armor when the sword is held in the main-hand or off-hand.
+sword_socket_schema.name=Socket
+sword_socket_schema.description=Socket a gem into the sword, providing different effects depending on the gem.
+sword_socket_schema.slot1=Gem
+sword/socket.name=Socket
+sword/socket.description=A gem, fitted onto the sword where the blade meets the hilt. The gem is enchanted and provides magical boons to the wielder of the sword.
+sword_socket/diamond=Socket [§bDiamond§r]
+sword_socket/emerald=Socket [§aEmerald§r]
+sword_socket/lapis=Socket [§9Lapis§r]
+sword_socket/amber=Socket [§6Amber§r]
+sword_socket/pristine_diamond=Socket [§bDiamond+§r]
+sword_socket/pristine_diamond.description=A gem, fitted onto the sword where the blade meets the hilt. The gem is enchanted and provides magical boons to the wielder of the sword.\n\nThe gem is of pristine quality and provides improved effects compared to a gem of lesser quality.
+sword_socket/pristine_emerald=Socket [§aEmerald+§r]
+sword_socket/pristine_emerald.description=A gem, fitted onto the sword where the blade meets the hilt. The gem is enchanted and provides magical boons to the wielder of the sword.\n\nThe gem is of pristine quality and provides improved effects compared to a gem of lesser quality.
+sword_socket/pristine_lapis=Socket [§9Lapis+§r]
+sword_socket/pristine_lapis.description=A gem, fitted onto the sword where the blade meets the hilt. The gem is enchanted and provides magical boons to the wielder of the sword.\n\nThe gem is of pristine quality and provides improved effects compared to a gem of lesser quality.
+sword/counterweight.name=Counterweight
+sword/counterweight.description=A counterweight attached to the bottom of the hilt. Greatly increases attack speed if the counterweight consumes the same amount of integrity as all other modules combined. If integrity usage differs the bonus is reduced, a large difference reduces the bonus further and may even reduce the attack speed.
+sword/reinforced_fuller.name=Reinforced fuller
+sword/reinforced_fuller.description=A fuller reinforcement that provides additional integrity and reduces the chance for the item to take damage, but makes the sword heavier and slower to swing.
+sword_binding_schema.name=Binding
+sword_binding_schema.description=Tighten the binding between the hilt and the blade by wrapping it with rope or straps, or by using completely different materials and methods.
+sword_binding_schema.slot1=Material
+sword/binding.name=Binding
+sword_binding/string=String binding
+sword_binding/string.description=Tightly bound strings strengthens the blade's attachment to the hilt.
+sword_binding/leather=Leather binding
+sword_binding/leather.description=Tightly bound leather straps strengthens the blade's attachment to the hilt.
+sword_binding/hide=Hide binding
+sword_binding/hide.description=Tightly bound hide straps strengthens the blade's attachment to the hilt.
+sword_binding/vine=Vine binding
+sword_binding/vine.description=Tightly bound vine straps strengthens the blade's attachment to the hilt.
+sword_binding/bolt=Bolted
+sword_binding/bolt.description=An adjustable bolt attaches the blade to the hilt.
+sword_tweak/binding_bolt.label=Bolt tightness
+sword_tweak/binding_bolt.tooltip=§eTighten§r the bolt to make the sword more stiff, increasing damage.\n§eLoosen§r the bolt to allow for a softer rebound, effectively increasing durability.
+sword_tweak/binding_bolt.left=Loose
+sword_tweak/binding_bolt.right=Tight
+sword/forefinger_ring.name=Forefinger ring
+sword/forefinger_ring.description=A ring has been attached at the top of the hilt. The ring allows for a better grip, increasing the minimum damage dealt when swinging too fast.
+sword/grip_loop.name=Grip loop
+sword/grip_loop.description=A ring attached at the top of the hilt. The ring allows for a better grip, increasing the minimum damage dealt when swinging too fast.
+sword/short_blade.description=A blade that's shorter and lighter than the common blade, allows for a faster swing rate but deals slightly less damage per swing.
+sword/short_blade.item_name=Shortblade
+sword/heavy_blade.description=A large and hefty blade that sacrifices attack speed for increased damage. Has a powerful sweeping attack on fully charged attacks.
+sword/heavy_blade.item_name=Greatsword
+sword/machete.description=A machete which can be used to cut down plants in an area, it deals average damage and has an average attack speed.\n\nThe machete works different from other tools as it instantly harvests blocks but only if it's not on swing cooldown.
+sword/machete.item_name=Machete
+duplex_head_hone_durability_1_schema.name=Hone: Durability I
+duplex_head_hone_durability_1_schema.description=Hone the module to increase the durability it provides by 4%%.
+duplex_head_hone_durability_2_schema.name=Hone: Durability II
+duplex_head_hone_durability_2_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 4%% to 9%%.
+duplex_head_hone_durability_3_schema.name=Hone: Durability III
+duplex_head_hone_durability_3_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 9%% to 13%%.
+duplex_head_hone_durability_4_schema.name=Hone: Durability IV
+duplex_head_hone_durability_4_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 13%% to 18%%.
+duplex_head_hone_durability_5_schema.name=Hone: Durability V
+duplex_head_hone_durability_5_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 18%% to 22%%.
+hone/durability.name=Hone: Durability
+hone/durability.description=Increases durability
+duplex_head_hone_speed_1_schema.name=Hone: Speed I
+duplex_head_hone_speed_1_schema.description=Hone the module to increase the overall swing speed by 0.03.
+duplex_head_hone_speed_2_schema.name=Hone: Speed II
+duplex_head_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.03 to 0.07.
+duplex_head_hone_speed_3_schema.name=Hone: Speed III
+duplex_head_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.07 to 0.1.
+duplex_head_hone_speed_4_schema.name=Hone: Speed IV
+duplex_head_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.1 to 0.14.
+duplex_head_hone_speed_5_schema.name=Hone: Speed V
+duplex_head_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.14 to 0.17.
+hone/speed.name=Hone: Speed
+hone/speed.description=Increases swing speed
+duplex_hone_damage_flat_1_schema.name=Hone: Damage I
+duplex_hone_damage_flat_1_schema.description=Hone the module to increase the damage dealt by 0.5.
+duplex_hone_damage_flat_2_schema.name=Hone: Damage II
+duplex_hone_damage_flat_2_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 0.5 to 1.
+duplex_hone_damage_flat_3_schema.name=Hone: Damage III
+duplex_hone_damage_flat_3_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1 to 1.5.
+duplex_hone_damage_flat_4_schema.name=Hone: Damage IV
+duplex_hone_damage_flat_4_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1.5 to 2.
+duplex_hone_damage_flat_5_schema.name=Hone: Damage V
+duplex_hone_damage_flat_5_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 2 to 3.
+hone/damage.name=Hone: Damage
+hone/damage.description=Increases damage dealt
+duplex_hone_axe_efficiency_1_schema.name=Hone: Chop Eff. I
+duplex_hone_axe_efficiency_1_schema.description=Hone the module to increase efficiency for chopping by 1.
+duplex_hone_axe_efficiency_2_schema.name=Hone: Chop Eff. II
+duplex_hone_axe_efficiency_2_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 1 to 2.5.
+duplex_hone_axe_efficiency_3_schema.name=Hone: Chop Eff. III
+duplex_hone_axe_efficiency_3_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 2.5 to 5.
+duplex_hone_axe_efficiency_4_schema.name=Hone: Chop Eff. IV
+duplex_hone_axe_efficiency_4_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 5 to 10.
+duplex_hone_axe_efficiency_5_schema.name=Hone: Chop Eff. V
+duplex_hone_axe_efficiency_5_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 10 to 15.
+hone/axe_efficiency.name=Hone: Chop Efficiency
+hone/axe_efficiency.description=Increases chopping efficiency
+duplex_hone_axe_tier_1_schema.name=Hone: Chop Tier I
+duplex_hone_axe_tier_1_schema.description=Hone the module to increase chopping tier by 1.
+hone/axe_tier.name=Hone: Chop Tier
+hone/axe_tier.description=Increases chopping tier by 1
+duplex_hone_shovel_efficiency_1_schema.name=Hone: Dig Eff. I
+duplex_hone_shovel_efficiency_1_schema.description=Hone the module to increase efficiency for digging by 1.
+duplex_hone_shovel_efficiency_2_schema.name=Hone: Dig Eff. II
+duplex_hone_shovel_efficiency_2_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 1 to 2.5.
+duplex_hone_shovel_efficiency_3_schema.name=Hone: Dig Eff. III
+duplex_hone_shovel_efficiency_3_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 2.5 to 5.
+duplex_hone_shovel_efficiency_4_schema.name=Hone: Dig Eff. IV
+duplex_hone_shovel_efficiency_4_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 5 to 10.
+duplex_hone_shovel_efficiency_5_schema.name=Hone: Dig Eff. V
+duplex_hone_shovel_efficiency_5_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 10 to 15.
+hone/shovel_efficiency.name=Hone: Dig Efficiency
+hone/shovel_efficiency.description=Increases digging efficiency
+duplex_hone_shovel_tier_1_schema.name=Hone: Dig Tier I
+duplex_hone_shovel_tier_1_schema.description=Hone the module to increase digging tier by 1.
+hone/shovel_tier.name=Hone: Dig Tier
+hone/shovel_tier.description=Increases digging tier by 1
+duplex_hone_pickaxe_efficiency_1_schema.name=Hone: Mine Eff. I
+duplex_hone_pickaxe_efficiency_1_schema.description=Hone the module to increase efficiency for mining by 1.
+duplex_hone_pickaxe_efficiency_2_schema.name=Hone: Mine Eff. II
+duplex_hone_pickaxe_efficiency_2_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 1 to 2.5.
+duplex_hone_pickaxe_efficiency_3_schema.name=Hone: Mine Eff. III
+duplex_hone_pickaxe_efficiency_3_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 2.5 to 5.
+duplex_hone_pickaxe_efficiency_4_schema.name=Hone: Mine Eff. IV
+duplex_hone_pickaxe_efficiency_4_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 5 to 10.
+duplex_hone_pickaxe_efficiency_5_schema.name=Hone: Mine Eff. V
+duplex_hone_pickaxe_efficiency_5_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 10 to 15.
+hone/pickaxe_efficiency.name=Hone: Mine Efficiency
+hone/pickaxe_efficiency.description=Increases mining efficiency
+duplex_hone_pickaxe_tier_1_schema.name=Hone: Mine Tier I
+duplex_hone_pickaxe_tier_1_schema.description=Hone the module to increase mining tier by 1.
+hone/pickaxe_tier.name=Hone: Mine Tier
+hone/pickaxe_tier.description=Increases mining tier by 1
+duplex/basic_handle.name=Basic handle
+duplex/basic_handle.description=A basic tool handle. Handles are the primary source of integrity for tools.
+basic_handle/acacia=Acacia handle
+basic_handle/forged_beam=Repurposed beam
+basic_handle/blazing.name=Blazing
+basic_handle/blazing.description=Using this may set you on fire, more sever in hot environments.
+basic_handle/ender_reverb.name=Ender reverb
+basic_handle/ender_reverb.description=Reacts negatively with nearby entities originating from the end.
+basic_handle/wrap_string.name=String wrap
+basic_handle/wrap_string.description=Slightly increases damage and speed, reduces negative handle effects.
+basic_handle/wrap_leather.name=Leather wrap
+basic_handle/wrap_leather.description=Slightly increases damage and speed, reduces negative handle effects.
+basic_handle/wrap_hide.name=Hide wrap
+basic_handle/wrap_hide.description=Slightly increases damage and speed, reduces negative handle effects.
+basic_handle/wrap_vine.name=Vine wrap
+basic_handle/wrap_vine.description=Slightly increases damage and speed, reduces negative handle effects.
+wrap_handle_schema.name=Wrap handle
+wrap_handle_schema.slot1=Material
+wrap_handle_schema.description=Wrap the handle using the provided materials. Slighly increases damage and speed, and reduces negative effects potentially caused by the handle.
+wrap_handle_hone_1_schema.name=Hone: Wrap II
+wrap_handle_hone_1_schema.slot1=Material
+wrap_handle_hone_1_schema.description=Improve the handle wrap, further increasing damage and speed, and reducing negative effects.
+wrap_handle_hone_2_schema.name=Hone: Wrap III
+wrap_handle_hone_2_schema.slot1=Material
+wrap_handle_hone_2_schema.description=Further improve the handle wrap, increasing damage and speed, and reducing negative effects.
+handle_hone_speed_1_schema.name=Hone: Speed I
+handle_hone_speed_1_schema.description=Hone the handle to increase the overall swing speed by 4%%.
+handle_hone_speed_2_schema.name=Hone: Speed II
+handle_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 4%% to 9%%.
+handle_hone_speed_3_schema.name=Hone: Speed III
+handle_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 9%% to 13%%.
+handle_hone_speed_4_schema.name=Hone: Speed IV
+handle_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 13%% to 18%%.
+handle_hone_speed_5_schema.name=Hone: Speed V
+handle_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 18%% to 22%%.
+duplex_socket_schema.name=Socket
+duplex_socket_schema.description=Socket a gem into the tool, providing different effects depending on the gem.
+duplex_socket_schema.slot1=Gem
+duplex/socket.name=Socket
+duplex/socket.description=A gem, fitted onto the side of the tool head. The gem is enchanted and provides magical boons to the wielder.
+duplex_socket/diamond=Socket [§bDiamond§r]
+duplex_socket/emerald=Socket [§aEmerald§r]
+duplex_socket/lapis=Socket [§9Lapis§r]
+duplex_socket/amber=Socket [§6Amber§r]
+duplex_socket/pristine_diamond=Socket [§bDiamond+§r]
+duplex_socket/pristine_diamond.description=A gem, fitted onto the side of the tool head. The gem is enchanted and provides magical boons to the tools wielder.\n\nThe gem is of pristine quality and provides increased effects.
+duplex_socket/pristine_emerald=Socket [§aEmerald+§r]
+duplex_socket/pristine_emerald.description=A gem, fitted onto the side of the tool head. The gem is enchanted and provides magical boons to the tools wielder.\n\nThe gem is of pristine quality and provides increased effects.
+duplex_socket/pristine_lapis=Socket [§9Lapis+§r]
+duplex_socket/pristine_lapis.description=A gem, fitted onto the side of the tool head. The gem is enchanted and provides magical boons to the tools wielder.\n\nThe gem is of pristine quality and provides increased effects.
+duplex_binding_schema.name=Binding
+duplex_binding_schema.description=Bind the tool head to the handle by binding it with rope or straps, or by using completely different materials and methods.
+duplex_binding_schema.slot1=Material
+duplex/binding.name=Binding
+duplex_binding/string=String binding
+duplex_binding/string.description=Tightly bound strings strengthen the tool head's attachment to the handle.
+duplex_binding/leather=Leather binding
+duplex_binding/leather.description=Tightly bound leather straps strengthen the tool head's attachment to the handle.
+duplex_binding/hide=Hide binding
+duplex_binding/hide.description=Tightly bound hide straps strengthen the tool head's attachment to the handle.
+duplex_binding/vine=Vine binding
+duplex_binding/vine.description=Tightly bound vine straps strengthen the tool head's attachment to the handle.
+duplex_binding/bolt=Bolted
+duplex_binding/bolt.description=An adjustable bolt attaches the tool head to the handle.
+duplex_tweak/binding_bolt.label=Bolt tightness
+duplex_tweak/binding_bolt.tooltip=§eTighten§r the bolt to make the tool more rigid, increasing gathering efficiency.\n§eLoosen§r the bolt to allow for a softer rebound, effectively increasing durability.
+duplex_tweak/binding_bolt.left=Loose
+duplex_tweak/binding_bolt.right=Tight
+duplex/basic_axe.name=Axe head
+duplex/basic_axe.description=A basic axe head that can be used for chopping things.\n\nDouble axe heads provide synergy bonuses.
+duplex/basic_pickaxe.name=Pickaxe head
+duplex/basic_pickaxe.description=A basic pickaxe head that can be used for mining.\n\nDouble pickaxe heads may provide synergy bonuses.
+duplex/butt.name=Tool butt
+duplex/butt.description=The back side of a single sided tool, typically yields faster swing speed than a double sided head.
+duplex/basic_hammer.name=Hammer head
+duplex/basic_hammer.description=The hammer head can be used when crafting modular items, and is sometimes used for salvaging.\n\nDouble hammer heads may provide synergy bonuses.
+basic_hammer/log.item_name=Mallet
+basic_hammer/stone.item_name=Hammer
+basic_hammer/iron.item_name=Hammer
+basic_hammer/obsidian.item_name=Hammer
+basic_hammer/copper.item_name=Hammer
+basic_hammer/tin.item_name=Hammer
+basic_hammer/nickel.item_name=Hammer
+basic_hammer/lead.item_name=Hammer
+basic_hammer/bronze.item_name=Hammer
+basic_hammer/electrum.item_name=Hammer
+basic_hammer/steel.item_name=Hammer
+basic_hammer/thaumium.item_name=Hammer
+basic_hammer/ironwood.item_name=Hammer
+basic_hammer/steeleaf.item_name=Hammer
+basic_hammer/fierymetal.item_name=Hammer
+basic_hammer/knightmetal.item_name=Hammer
+duplex/adze.name=Adze head
+duplex/adze.description=A hefty arched blade at right angles to the handle. The adze can primarily be used for digging but can also be used for cutting wood.
+duplex/hoe.name=Hoe
+duplex/hoe.description=A basic hoe, useful for tilling soil.
+duplex/sickle.name=Sickle
+duplex/sickle.description=A slightly arched sickle which can be used to cut blocks in an area.\n\nWorks different from other tools as it instantly harvests blocks but only if it's not on swing cooldown.
+toolbelt.blocked=Inventory full, make space first
+toolbelt.effect.tooltip.quick.quickAccess=A suitable tool can be quickly drawn from this slot
+toolbelt.effect.tooltip.quiver.quickAccess=Arrows can be drawn straight from this slot
+toolbelt.effect.tooltip.storage.quickAccess=Items can be restocked into this slot
+toolbelt.effect.tooltip.storage.cellSocket=Modules can draw power from cells in this slot
+belt/rope.item_name=Rope
+belt/rope.description=A very basic waistband fashioned from a rope. Can hold a very limited amount of attachments.
+belt/sash.item_name=Wool sash
+belt/sash.description=A woolen sash that can hold a small amount of attachments.
+belt/leather.item_name=Wrap
+belt/leather.description=A sturdy leather strap that can be wrapped around ones waist. Can hold a decent amount of attachments.
+belt/buckled.name=Leather belt
+belt/buckled.description=A sturdy leather belt, locked in place with a buckle. Can hold a large amount of attachments.
+belt/inlaid.name=Shulker inlaid belt
+belt/inlaid.description=A sturdy leather belt that has been inlaid with shulker shells. Can hold an impressive amount of attachments.
+strap1/leather.name=Leather strap
+strap1/leather.description=A leather strap that can be used to hang an item off the belt, allowing quick access to a frequently used tool or weapon.
+strap1/iron.name=Iron loop
+strap1/iron.description=An iron loop that can be used to hang an item off the belt, allowing quick access to a frequently used tool or weapon.
+strap2/leather.name=2 Leather straps
+strap2/leather.description=Two leather straps that can be used to hang items off the belt, allowing quick access to frequently used tools or weapons.
+strap2/iron.name=2 Iron loops
+strap2/iron.description=Two iron loops that can be used to hang items off the belt, allowing quick access to frequently used tools or weapons.
+strap3/leather.name=3 Leather straps
+strap3/leather.description=Three leather straps that can be used to hang items off the belt, allowing quick access to frequently used tools or weapons.
+strap3/iron.name=3 Iron loops
+strap3/iron.description=Three iron loops that can be used to hang items off the belt, allowing quick access to frequently used tools or weapons.
+strap4/leather.name=4 Leather straps
+strap4/leather.description=Four leather straps that can be used to hang items off the belt, allowing quick access to frequently used tools or weapons.
+strap4/iron.name=4 Iron loops
+strap4/iron.description=Four iron loops that can be used to hang items off the belt, allowing quick access to frequently used tools or weapons.
+toolbelt/potion_storage.name=Potion bag
+toolbelt/potion_storage.description=A small bag specifically designed for carrying potions. The bag stores a large amount of potions, but can only support a small set of different types of potions.
+potion_storage/forged_mesh=Mesh potion pack
+toolbelt/storage.name=Storage pouch
+toolbelt/storage.description=A small pouch which can store a decent amount of items. The contents of the pouch are not available using the toolbelt's quick access functionality.
+storage/forged_mesh=Mesh pack
+toolbelt/quiver.name=Quiver
+toolbelt/quiver.description=A quiver that can hold a large amount of arrows.
+quiver/forged_mesh=Mesh quiver
+###############################
+# QUICK ACCESS IMPROVEMENTS
+###############################
+strap_quickslot_schema.name=Quick latch
+strap_quickslot_schema.description=Using a quick latch mechanism for locking the strap in place allows faster access to the tool held by the strap.\n\n§7Tapping the toolbelt access hotkey will attempt to equip the first item suitable for breaking or salvaging the block you're looking at. Tools can only be equipped from slots with this upgrade.
+strap_quickslot_schema.slot1=Latch
+strap/quick_latch.name=Quick latch
+strap/quick_latch.description=Tapping the toolbelt hotkey will quickly equip the most suitable tool from this inventory.
+quiver_quickslot_schema.name=Quick latch
+quiver_quickslot_schema.description=Upgrade the quiver with a quick latch mechanism, allowing quicker access to arrows in the quiver.\n\n§7Drawing a bow with no ammo available will automatically grab an arrow from the first stack in the quiver.
+quiver_quickslot_schema.slot1=Latch
+quiver/quick_latch.name=Quick latch
+quiver/quick_latch.description=Arrows will be automatically drawn from this quiver when no ammo is available.
+storage_quickslot_schema.name=Quick latch
+storage_quickslot_schema.description=Upgrade the pouch with a quick latch mechanism, making it easier to stash items into it.\n\n§7Held items can be put into the pouch using the restock hotkey.
+storage_quickslot_schema.slot1=Latch
+storage/quick_latch.name=Quick latch
+storage/quick_latch.description=Held items can be stashed into the pouch using the restock hotkey.

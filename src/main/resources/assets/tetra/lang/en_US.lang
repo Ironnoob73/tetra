@@ -255,7 +255,7 @@ item.magmatic_cell.charge_empty=§cEmpty
 ###############################
 tile.forged_pillar.name=Forged pillar
 tile.forged_platform.name=Forged platform
-tile.forged_platform_slab.name=Forged platform
+tile.forged_platform_slab.name=Forged slab
 tile.forged_wall.name=Forged wall
 tile.forged_vent.name=Forged vent
 tile.forged_crate.name=Forged crate
@@ -317,7 +317,6 @@ duplex/accessory=Accessory
 ###############################
 # MODULE PROGRESSION
 ###############################
-item.modular.settle_progress.label=Settle progress
 item.modular.settle_progress.label=Settle progress
 item.modular.settle_progress_gain.description=As the item is used this module will slowly settle into place, once settled it will provide additional integrity.\n\n§7Progress: §e%s§7/§e%s\n\n§7Requirement base: §e%s\n§7Durability penalty: §e%s
 item.modular.settle_progress_cost.description=As the item is used this module will slowly settle into place, once settled its integrity cost will decrease.\n\n§7Progress: §e%s§7/§e%s\n\n§7Requirement base: §e%s\n§7Durability penalty: §e%s
@@ -1297,6 +1296,13 @@ duplex/adze_pickaxe=Pick mattock
 duplex/adze_axe=Cutter mattock
 duplex/claw_hammer=Claw hammer
 duplex/claw_axe=Carpenter's axe
+#Vanilla
+duplex/pickaxe_pickaxe=Pickaxe
+duplex/axe_butt=Axe
+duplex/hoe_butt=Hoe
+#Joke
+duplex/hoe_hoe=Fake Pickaxe
+duplex/pickaxe_hoe=Hoe Pickaxe
 
 ###############################
 # DUPLEX HANDLE

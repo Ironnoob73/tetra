@@ -34,6 +34,28 @@
         "name": "duplex/claw_axe"
     },
     {
+        "modules": ["duplex/basic_pickaxe", "duplex/basic_pickaxe"],
+        "name": "duplex/pickaxe_pickaxe"
+    },
+    {
+        "modules": ["duplex/basic_axe", "duplex/butt"],
+        "name": "duplex/axe_butt"
+    },
+    {
+        "modules": ["duplex/hoe", "duplex/butt"],
+        "name": "duplex/hoe_butt"
+    },
+
+    {
+        "modules": ["duplex/hoe", "duplex/hoe"],
+        "name": "duplex/hoe_hoe"
+    },
+    {
+        "modules": ["duplex/basic_pickaxe", "duplex/hoe"],
+        "name": "duplex/pickaxe_hoe"
+    },
+
+    {
         "moduleVariants": ["basic_hammer/stone", "basic_hammer/stone"],
         "capabilities": {
             "hammer": 1

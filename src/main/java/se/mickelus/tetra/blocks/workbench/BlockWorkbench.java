@@ -31,6 +31,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import se.mickelus.tetra.ConfigHandler;
 import se.mickelus.tetra.TetraMod;
@@ -85,7 +86,9 @@ public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
             return EnumActionResult.FAIL;
         }
 
-        if (world.getBlockState(pos).getBlock().equals(Blocks.CRAFTING_TABLE)) {
+        if (world.getBlockState(pos).getBlock().equals(OreDictionary.getOreID("logWood"))
+          ||world.getBlockState(pos).getBlock().equals(Blocks.LOG)
+          ||world.getBlockState(pos).getBlock().equals(Blocks.LOG2)) {
 
             world.playSound(player, pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 0.5F);
 

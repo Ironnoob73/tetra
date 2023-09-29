@@ -1,24 +1,33 @@
 package se.mickelus.tetra.gui;
 
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.resources.I18n;
 import se.mickelus.tetra.gui.animation.KeyframeAnimation;
 
+import java.util.Collections;
+import java.util.List;
+
 public class GuiStringSmall extends GuiString {
+    private List<String> tooltip;
 
     public GuiStringSmall(int x, int y, String string) {
         super(x*2, y*2, string);
+        tooltip = Collections.singletonList(string);
     }
 
     public GuiStringSmall(int x, int y, String string, int color) {
         super(x*2, y*2, string, color);
+        tooltip = Collections.singletonList(string);
     }
 
     public GuiStringSmall(int x, int y, String string, GuiAttachment attachment) {
         super(x*2, y*2, string, attachment);
+        tooltip = Collections.singletonList(string);
     }
 
     public GuiStringSmall(int x, int y, String string, int color, GuiAttachment attachment) {
         super(x*2, y*2, string, color, attachment);
+        tooltip = Collections.singletonList(string);
     }
 
     @Override
@@ -66,6 +75,15 @@ public class GuiStringSmall extends GuiString {
                 onBlur();
             }
         }
+    }
+
+    //Text TOO small, tried to use tooltip.
+    @Override
+    public List<String> getTooltipLines() {
+        if (hasFocus()) {
+            return tooltip;
+        }
+        return super.getTooltipLines();
     }
 
     @Override

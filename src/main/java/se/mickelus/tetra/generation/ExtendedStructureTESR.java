@@ -1,6 +1,6 @@
 package se.mickelus.tetra.generation;
 
-import com.sun.javafx.geom.Vec3f;
+//import com.sun.javafx.geom.Vec3f;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.tileentity.TileEntityStructureRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
