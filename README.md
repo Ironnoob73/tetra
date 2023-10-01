@@ -9,3 +9,7 @@ Make Vanilla tools such as pickaxes and axes display the name suffix correctly
 Display tooltip when the mouse points to small text to improve reading
 <li>完善部分中文翻译<br>
 Improve some Chinese translations
+<li>现在锤子敲击原木才会得到加工台<br>
+Now the hammer hits the log to get the crafting table
+<li>旧“工作台”将弃用，使用锤子右击旧的“工作台”可以转化为新的加工台<br>
+The old "Crafting Table" will be deprecated, and the old "Crafting Table" can be converted into a new Workbench by right-clicking with a hammer

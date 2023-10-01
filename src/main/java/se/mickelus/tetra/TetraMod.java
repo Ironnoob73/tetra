@@ -40,6 +40,8 @@ import se.mickelus.tetra.blocks.forged.transfer.BlockTransferUnit;
 import se.mickelus.tetra.blocks.geode.*;
 import se.mickelus.tetra.blocks.hammer.BlockHammerBase;
 import se.mickelus.tetra.blocks.hammer.BlockHammerHead;
+import se.mickelus.tetra.blocks.workbench.BlockForgedWorkbench;
+import se.mickelus.tetra.blocks.workbench.BlockWoodenWorkbench;
 import se.mickelus.tetra.blocks.workbench.BlockWorkbench;
 import se.mickelus.tetra.data.DataHandler;
 import se.mickelus.tetra.generation.TGenCommand;
@@ -112,6 +114,8 @@ public class TetraMod {
 
         blocks = new Block[] {
                 new BlockWorkbench(),
+                new BlockWoodenWorkbench(),
+                new BlockForgedWorkbench(),
                 new BlockGeode(),
         };
 

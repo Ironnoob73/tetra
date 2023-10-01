@@ -3,6 +3,8 @@ itemGroup.tetra=Tetra
 ###############################
 # WORKBENCH
 ###############################
+tile.wooden_workbench.name=加工台
+tile.forged_workbench.name=锻造加工台
 workbench.schema_list.empty=选定格子无升级可用。
 workbench.slot_detail.details_tab=细节
 workbench.slot_detail.craft_tab=制作
@@ -13,7 +15,7 @@ workbench.module_detail.not_tweakable=调整不可用
 repair_action.label=修理
 workbench.schema_detail.experience=此操作需要%d经验等级
 workbench.schema_list.temporary=由背包中的物品提供
-
+workbench.unused_warning=该方块将弃用，请使用锤子右击转换
 ###############################
 # MISC
 ###############################

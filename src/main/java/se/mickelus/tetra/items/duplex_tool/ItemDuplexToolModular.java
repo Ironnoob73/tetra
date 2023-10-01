@@ -1,6 +1,7 @@
 package se.mickelus.tetra.items.duplex_tool;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,8 +13,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 import se.mickelus.tetra.ConfigHandler;
 import se.mickelus.tetra.TetraMod;
+import se.mickelus.tetra.blocks.workbench.BlockWoodenWorkbench;
+import se.mickelus.tetra.blocks.workbench.BlockForgedWorkbench;
 import se.mickelus.tetra.data.DataHandler;
 import se.mickelus.tetra.blocks.workbench.BlockWorkbench;
 import se.mickelus.tetra.capabilities.Capability;
@@ -297,9 +301,15 @@ public class ItemDuplexToolModular extends ItemModularHandheld {
 
     @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
-        if (!player.isSneaking() && world.getBlockState(pos).getBlock().equals(Blocks.CRAFTING_TABLE)
-                && getCapabilityLevel(player.getHeldItem(hand), Capability.hammer) > 0) {
-            return BlockWorkbench.upgradeWorkbench(player, world, pos, hand, side);
+        if (!player.isSneaking() && getCapabilityLevel(player.getHeldItem(hand), Capability.hammer) > 0) {
+            if((world.getBlockState(pos).getBlock().equals(OreDictionary.getOreID("logWood"))
+              ||world.getBlockState(pos).getBlock().equals(Blocks.LOG)
+              ||world.getBlockState(pos).getBlock().equals(Blocks.LOG2))
+              ||(world.getBlockState(pos).getBlock().equals(Block.REGISTRY.getObject(new ResourceLocation("tetra:workbench"))) && world.getBlockState(pos).getValue(BlockWorkbench.propVariant).equals(BlockWorkbench.Variant.wood))){
+                return BlockWoodenWorkbench.upgradeWorkbench(player, world, pos, hand, side);
+            } else if (world.getBlockState(pos).getBlock().equals(Block.REGISTRY.getObject(new ResourceLocation("tetra:workbench"))) && world.getBlockState(pos).getValue(BlockWorkbench.propVariant).equals(BlockWorkbench.Variant.forged)) {
+                return BlockForgedWorkbench.upgradeWorkbench(player, world, pos, hand, side);
+            }
         }
         return super.onItemUseFirst(player, world, pos, side, hitX, hitY, hitZ, hand);
     }

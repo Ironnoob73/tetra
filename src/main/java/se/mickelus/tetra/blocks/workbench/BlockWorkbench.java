@@ -1,6 +1,7 @@
 package se.mickelus.tetra.blocks.workbench;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
+import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -29,6 +30,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
@@ -52,7 +56,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
 public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
 
     public static final PropertyEnum<Variant> propVariant = PropertyEnum.create("variant", Variant.class);
@@ -80,7 +83,7 @@ public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
 
 
 
-    public static EnumActionResult upgradeWorkbench(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing) {
+    /*public static EnumActionResult upgradeWorkbench(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing) {
         ItemStack itemStack = player.getHeldItem(hand);
         if (!player.canPlayerEdit(pos.offset(facing), facing, itemStack)) {
             return EnumActionResult.FAIL;
@@ -101,7 +104,7 @@ public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
         }
 
         return EnumActionResult.PASS;
-    }
+    }*/
 
     /**
      * Special item regististration to handle multiple variants registered in the creative menu.
@@ -133,13 +136,10 @@ public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
             }
         }
     }
-
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        if (stack.getItemDamage() == Variant.forged.ordinal()) {
-            tooltip.add(ChatFormatting.DARK_GRAY + I18n.format("forged_description"));
-        }
+        tooltip.add(ChatFormatting.RED + I18n.format("workbench.unused_warning"));
     }
 
     @Override
@@ -172,10 +172,10 @@ public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
         }
     }
 
-    @Override
+    /*@Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-        return Blocks.CRAFTING_TABLE.getPickBlock(state, target, world, pos, player);
-    }
+        return Block.REGISTRY.getObject(new ResourceLocation("tetra:workbench")).getPickBlock(state, target, world, pos, player);
+    }*/
 
     @Override
     public Collection<Capability> getCapabilities(World world, BlockPos pos, IBlockState blockState) {
@@ -237,15 +237,17 @@ public class BlockWorkbench extends TetraBlock implements ITileEntityProvider {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        if (meta < Variant.values().length) {
-            return getDefaultState().withProperty(propVariant, Variant.values()[meta]);
+        if (meta ==0) {
+            return this.blockState.getBaseState().withProperty(propVariant, Variant.wood);
+        }else{
+            return this.blockState.getBaseState().withProperty(propVariant, Variant.forged);
         }
-        return getDefaultState();
+        //return getDefaultState();
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return state.getValue(propVariant).ordinal();
+        return state.getValue(propVariant).equals(Variant.wood) ? 0: 1;
     }
 
     @Override

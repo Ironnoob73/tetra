@@ -62,6 +62,8 @@ journal.craft.variants=Variants
 ###############################
 # WORKBENCH
 ###############################
+tile.wooden_workbench.name=Workbench
+tile.forged_workbench.name=Forged Workbench
 workbench.slot_detail.details_tab=Details
 workbench.slot_detail.craft_tab=Craft
 workbench.slot_detail.tweak_tab=Tweak
@@ -77,7 +79,7 @@ workbench.schema_detail.back=back
 workbench.schema_detail.experience=This action requires %d experience levels
 
 workbench.schema_list.temporary=Made available by an item in your inventory
-
+workbench.unused_warning=This block will be deprecated, use a hammer to right-click for transformation
 ###############################
 # CAPABILITIES
 ###############################
