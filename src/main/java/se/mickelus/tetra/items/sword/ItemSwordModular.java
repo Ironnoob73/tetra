@@ -30,6 +30,7 @@ public class ItemSwordModular extends ItemModularHandheld {
     private final ItemModuleMajor shortBladeModule;
     private final ItemModuleMajor heavyBladeModule;
     private final ItemModuleMajor macheteModule;
+    private final ItemModuleMajor baseballBatModule;
     private final ItemModuleMajor hiltModule;
 
     @GameRegistry.ObjectHolder(TetraMod.MOD_ID + ":" + unlocalizedName)
@@ -68,6 +69,12 @@ public class ItemSwordModular extends ItemModularHandheld {
         macheteModule = new BasicMajorModule(bladeKey, "sword/machete",
                 "sword/improvements/shared_blade",
                 "sword/improvements/shared_blade_hone",
+                "settling_improvements",
+                "destabilization_improvements");
+        baseballBatModule = new BasicMajorModule(bladeKey, "sword/baseball_bat",
+                "sword/improvements/shared_blade",
+                "sword/improvements/shared_blade_hone",
+                "sword/improvements/baseball_bat",
                 "settling_improvements",
                 "destabilization_improvements");
 
@@ -109,6 +116,10 @@ public class ItemSwordModular extends ItemModularHandheld {
 
         ItemUpgradeRegistry.instance.registerConfigSchema("sword/machete");
         new BookEnchantSchema(macheteModule);
+
+        ItemUpgradeRegistry.instance.registerConfigSchema("sword/baseball_bat");
+        ItemUpgradeRegistry.instance.registerConfigSchema("sword/baseball_bat_improvements");
+        new BookEnchantSchema(baseballBatModule);
 
         ItemUpgradeRegistry.instance.registerConfigSchema("sword/basic_hilt");
         ItemUpgradeRegistry.instance.registerConfigSchema("sword/basic_hilt_improvements");

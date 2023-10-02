@@ -176,6 +176,14 @@ public class ItemModularHandheld extends ItemModular {
                 }
             }
 
+            int stunnedLevel = getEffectLevel(itemStack, ItemEffect.stunned);
+            if (stunnedLevel > 0 && attacker.getRNG().nextFloat() < (float) stunnedLevel /10) {
+                target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 50, 10, false, true));
+                target.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 50, 10, false, false));
+                target.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 100, stunnedLevel, false, false));
+
+            }
+
             causeFierySelfEffect(attacker, itemStack, 1.4);
             causeEnderReverbEffect(attacker, itemStack, 1.5);
             causeHauntEffect(attacker, itemStack, 1.5);

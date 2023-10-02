@@ -1,0 +1,350 @@
+[
+    {
+        "key": "baseball_bat/oak",
+        "durability": 50,
+        "integrity": -1,
+        "magicCapacity": 15,
+        "damage": 3,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "9d804e" },
+        "effects": {
+            "stunned": 1
+        }
+    },
+    {
+        "key": "baseball_bat/spruce",
+        "durability": 50,
+        "integrity": -1,
+        "magicCapacity": 15,
+        "damage": 3,
+        "attackSpeed": 0.4,
+        "glyph": { "tint": "694f2f" },
+        "effects": {
+            "stunned": 1
+        }
+    },
+    {
+        "key": "baseball_bat/birch",
+        "durability": 72,
+        "integrity": -1,
+        "magicCapacity": 15,
+        "damage": 3,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "c8b77d" },
+        "effects": {
+            "stunned": 1
+        }
+    },
+    {
+        "key": "baseball_bat/jungle",
+        "durability": 50,
+        "integrity": -1,
+        "magicCapacity": 17,
+        "damage": 3,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "996e4c" },
+        "effects": {
+            "stunned": 1
+        }
+    },
+    {
+        "key": "baseball_bat/acacia",
+        "durability": 72,
+        "integrity": -1,
+        "magicCapacity": 15,
+        "damage": 4,
+        "attackSpeed": 0,
+        "glyph": { "tint": "ac5d33" },
+        "effects": {
+            "stunned": 1
+        }
+    },
+    {
+        "key": "baseball_bat/dark_oak",
+        "durability": 50,
+        "integrity": -1,
+        "magicCapacity": 17,
+        "damage": 3,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "3c2712" },
+        "effects": {
+            "stunned": 1
+        }
+    },
+    {
+        "key": "baseball_bat/cobblestone",
+        "durability": 102,
+        "integrity": -1,
+        "magicCapacity": 5,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "9a9a9a" },
+        "effects": {
+            "stunned": 2
+        }
+    },
+    {
+        "key": "baseball_bat/stone",
+        "durability": 180,
+        "integrity": -1,
+        "magicCapacity": 5,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "9a9a9a" },
+        "effects": {
+            "stunned": 2
+        }
+    },
+    {
+        "key": "baseball_bat/granite",
+        "durability": 240,
+        "integrity": -1,
+        "magicCapacity": 5,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "8a6658" },
+        "effects": {
+            "stunned": 2
+        }
+    },
+    {
+        "key": "baseball_bat/diorite",
+        "durability": 180,
+        "integrity": -1,
+        "magicCapacity": 7,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "b1b1b3" },
+        "effects": {
+            "stunned": 2
+        }
+    },
+    {
+        "key": "baseball_bat/andesite",
+        "durability": 200,
+        "integrity": -1,
+        "magicCapacity": 5,
+        "damage": 5,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "79797a" },
+        "effects": {
+            "stunned": 2
+        }
+    },
+    {
+        "key": "baseball_bat/flint",
+        "durability": 102,
+        "integrity": -1,
+        "magicCapacity": 15,
+        "damage": 5,
+        "attackSpeed": 0.1,
+        "glyph": { "tint": "343434" },
+        "effects": {
+            "stunned": 2
+        }
+    },
+    {
+        "key": "baseball_bat/iron",
+        "durability": 221,
+        "integrity": -1,
+        "magicCapacity": 14,
+        "damage": 5,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "d8d8d8" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/gold",
+        "durability": 15,
+        "integrity": -1,
+        "magicCapacity": 22,
+        "damage": 3,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "eaee57" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/diamond",
+        "durability": 1492,
+        "integrity": -2,
+        "magicCapacity": 10,
+        "damage": 6,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "33ebcb" },
+        "effects": {
+            "stunned": 4
+        }
+    },
+    {
+        "key": "baseball_bat/obsidian",
+        "durability": 1628,
+        "integrity": -3,
+        "magicCapacity": 7,
+        "damage": 8,
+        "attackSpeed": 0.1,
+        "glyph": { "tint": "3c3056" },
+        "effects": {
+            "stunned": 4
+        }
+    },
+    {
+        "key": "baseball_bat/copper",
+        "durability": 148,
+        "integrity": 0,
+        "magicCapacity": 13,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "df7646" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/tin",
+        "durability": 126,
+        "integrity": 0,
+        "magicCapacity": 12,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "b3c9c1" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/silver",
+        "durability": 60,
+        "integrity": -1,
+        "magicCapacity": 21,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "d6f6ff" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/nickel",
+        "durability": 200,
+        "integrity": -1,
+        "magicCapacity": 12,
+        "damage": 5.5,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "c2d3a6" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/lead",
+        "durability": 108,
+        "integrity": -2,
+        "magicCapacity": 11,
+        "damage": 6,
+        "attackSpeed": 0.1,
+        "glyph": { "tint": "897a9b" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/bronze",
+        "durability": 320,
+        "integrity": 0,
+        "magicCapacity": 13,
+        "damage": 5,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "b2712c" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/electrum",
+        "durability": 53,
+        "integrity": -1,
+        "magicCapacity": 24,
+        "damage": 4,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "e4da4c" },
+        "effects": {
+            "stunned": 4
+        }
+    },
+    {
+        "key": "baseball_bat/steel",
+        "durability": 380,
+        "integrity": -1,
+        "magicCapacity": 11,
+        "damage": 6,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "999999" },
+        "effects": {
+            "stunned": 4
+        }
+    },
+    {
+        "key": "baseball_bat/thaumium",
+        "durability": 470,
+        "integrity": -1,
+        "magicCapacity": 25,
+        "damage": 5.5,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "4d3984" },
+        "effects": {
+            "stunned": 4
+        }
+    },
+    {
+        "key": "baseball_bat/ironwood",
+        "durability": 482,
+        "integrity": -1,
+        "magicCapacity": 18,
+        "damage": 5,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "5ea917" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/steeleaf",
+        "durability": 101,
+        "integrity": -1,
+        "magicCapacity": 15,
+        "damage": 6,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "458430" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/fierymetal",
+        "durability": 944,
+        "integrity": -5,
+        "magicCapacity": 12,
+        "damage": 7,
+        "attackSpeed": 0.2,
+        "glyph": { "tint": "fa9f00" },
+        "effects": {
+            "stunned": 3
+        }
+    },
+    {
+        "key": "baseball_bat/knightmetal",
+        "durability": 230,
+        "integrity": -2,
+        "magicCapacity": 12,
+        "damage": 6,
+        "attackSpeed": 0.5,
+        "glyph": { "tint": "b8cf9c" },
+        "effects": {
+            "stunned": 4
+        }
+    }
+]

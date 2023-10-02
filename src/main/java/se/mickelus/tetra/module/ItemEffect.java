@@ -223,6 +223,12 @@ public enum ItemEffect {
      */
     earthbind,
 
+    /**
+     * Stunned: Hitting an entity has a chance to making them immobile, extremely weak and nauseating.
+     * The probability increases with rank.
+     */
+    stunned,
+
     //////////////////////////////////////////////////////////////
     // toolbelt
     //////////////////////////////////////////////////////////////
