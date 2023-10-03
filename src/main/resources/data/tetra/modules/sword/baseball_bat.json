@@ -6,7 +6,7 @@
         "magicCapacity": 15,
         "damage": 3,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "9d804e" },
+        "glyph": { "tint": "9d804e","textureY": 48 },
         "effects": {
             "stunned": 1
         }
@@ -18,7 +18,7 @@
         "magicCapacity": 15,
         "damage": 3,
         "attackSpeed": 0.4,
-        "glyph": { "tint": "694f2f" },
+        "glyph": { "tint": "694f2f","textureY": 48 },
         "effects": {
             "stunned": 1
         }
@@ -30,7 +30,7 @@
         "magicCapacity": 15,
         "damage": 3,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "c8b77d" },
+        "glyph": { "tint": "c8b77d","textureY": 48 },
         "effects": {
             "stunned": 1
         }
@@ -42,7 +42,7 @@
         "magicCapacity": 17,
         "damage": 3,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "996e4c" },
+        "glyph": { "tint": "996e4c","textureY": 48 },
         "effects": {
             "stunned": 1
         }
@@ -54,7 +54,7 @@
         "magicCapacity": 15,
         "damage": 4,
         "attackSpeed": 0,
-        "glyph": { "tint": "ac5d33" },
+        "glyph": { "tint": "ac5d33","textureY": 48 },
         "effects": {
             "stunned": 1
         }
@@ -66,7 +66,7 @@
         "magicCapacity": 17,
         "damage": 3,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "3c2712" },
+        "glyph": { "tint": "3c2712","textureY": 48 },
         "effects": {
             "stunned": 1
         }
@@ -78,7 +78,7 @@
         "magicCapacity": 5,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "9a9a9a" },
+        "glyph": { "tint": "9a9a9a","textureY": 48 },
         "effects": {
             "stunned": 2
         }
@@ -90,7 +90,7 @@
         "magicCapacity": 5,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "9a9a9a" },
+        "glyph": { "tint": "9a9a9a","textureY": 48 },
         "effects": {
             "stunned": 2
         }
@@ -102,7 +102,7 @@
         "magicCapacity": 5,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "8a6658" },
+        "glyph": { "tint": "8a6658","textureY": 48 },
         "effects": {
             "stunned": 2
         }
@@ -114,7 +114,7 @@
         "magicCapacity": 7,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "b1b1b3" },
+        "glyph": { "tint": "b1b1b3","textureY": 48 },
         "effects": {
             "stunned": 2
         }
@@ -126,7 +126,7 @@
         "magicCapacity": 5,
         "damage": 5,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "79797a" },
+        "glyph": { "tint": "79797a","textureY": 48 },
         "effects": {
             "stunned": 2
         }
@@ -138,7 +138,7 @@
         "magicCapacity": 15,
         "damage": 5,
         "attackSpeed": 0.1,
-        "glyph": { "tint": "343434" },
+        "glyph": { "tint": "343434","textureY": 48 },
         "effects": {
             "stunned": 2
         }
@@ -150,7 +150,7 @@
         "magicCapacity": 14,
         "damage": 5,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "d8d8d8" },
+        "glyph": { "tint": "d8d8d8","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -162,7 +162,7 @@
         "magicCapacity": 22,
         "damage": 3,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "eaee57" },
+        "glyph": { "tint": "eaee57","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -174,7 +174,7 @@
         "magicCapacity": 10,
         "damage": 6,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "33ebcb" },
+        "glyph": { "tint": "33ebcb","textureY": 48 },
         "effects": {
             "stunned": 4
         }
@@ -186,7 +186,7 @@
         "magicCapacity": 7,
         "damage": 8,
         "attackSpeed": 0.1,
-        "glyph": { "tint": "3c3056" },
+        "glyph": { "tint": "3c3056","textureY": 48 },
         "effects": {
             "stunned": 4
         }
@@ -198,7 +198,7 @@
         "magicCapacity": 13,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "df7646" },
+        "glyph": { "tint": "df7646","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -210,7 +210,7 @@
         "magicCapacity": 12,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "b3c9c1" },
+        "glyph": { "tint": "b3c9c1","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -222,7 +222,7 @@
         "magicCapacity": 21,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "d6f6ff" },
+        "glyph": { "tint": "d6f6ff","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -234,7 +234,7 @@
         "magicCapacity": 12,
         "damage": 5.5,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "c2d3a6" },
+        "glyph": { "tint": "c2d3a6","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -246,7 +246,7 @@
         "magicCapacity": 11,
         "damage": 6,
         "attackSpeed": 0.1,
-        "glyph": { "tint": "897a9b" },
+        "glyph": { "tint": "897a9b","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -258,7 +258,7 @@
         "magicCapacity": 13,
         "damage": 5,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "b2712c" },
+        "glyph": { "tint": "b2712c","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -270,7 +270,7 @@
         "magicCapacity": 24,
         "damage": 4,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "e4da4c" },
+        "glyph": { "tint": "e4da4c","textureY": 48 },
         "effects": {
             "stunned": 4
         }
@@ -282,7 +282,7 @@
         "magicCapacity": 11,
         "damage": 6,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "999999" },
+        "glyph": { "tint": "999999","textureY": 48 },
         "effects": {
             "stunned": 4
         }
@@ -294,7 +294,7 @@
         "magicCapacity": 25,
         "damage": 5.5,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "4d3984" },
+        "glyph": { "tint": "4d3984","textureY": 48 },
         "effects": {
             "stunned": 4
         }
@@ -306,7 +306,7 @@
         "magicCapacity": 18,
         "damage": 5,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "5ea917" },
+        "glyph": { "tint": "5ea917","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -318,7 +318,7 @@
         "magicCapacity": 15,
         "damage": 6,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "458430" },
+        "glyph": { "tint": "458430","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -330,7 +330,7 @@
         "magicCapacity": 12,
         "damage": 7,
         "attackSpeed": 0.2,
-        "glyph": { "tint": "fa9f00" },
+        "glyph": { "tint": "fa9f00","textureY": 48 },
         "effects": {
             "stunned": 3
         }
@@ -342,7 +342,7 @@
         "magicCapacity": 12,
         "damage": 6,
         "attackSpeed": 0.5,
-        "glyph": { "tint": "b8cf9c" },
+        "glyph": { "tint": "b8cf9c","textureY": 48 },
         "effects": {
             "stunned": 4
         }

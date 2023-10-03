@@ -1,0 +1,24 @@
+[
+  {
+    "key": "baseball_bat/iron_spike",
+    "textured": true,
+    "group": "spike",
+    "level": 1,
+    "integrity": -1,
+    "damage": 1,
+    "effects": {
+      "bleeding": 1
+    }
+  },
+  {
+    "key": "baseball_bat/gold_spike",
+    "textured": true,
+    "group": "spike",
+    "level": 1,
+    "integrity": -1,
+    "magicCapacity": 10,
+    "effects": {
+      "bleeding": 1
+    }
+  }
+]

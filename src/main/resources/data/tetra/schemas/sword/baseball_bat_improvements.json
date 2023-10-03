@@ -1,0 +1,41 @@
+[
+  {
+    "key": "spike_schema",
+    "slots": ["sword/blade"],
+    "materialSlotCount": 1,
+    "glyph": { "textureX": 16,"textureY": 48 },
+    "requirement": {
+      "type": "tetra:modular_item",
+      "modules": [
+        ["sword/baseball_bat"]
+      ]
+    },
+    "displayType": "improvement",
+    "outcomes": [
+      {
+        "material": {
+          "item": "minecraft:iron_nugget",
+          "count": 8
+        },
+        "requiredCapabilities": {
+          "hammer": 2
+        },
+        "improvements": {
+          "baseball_bat/iron_spike": 1
+        }
+      },
+      {
+        "material": {
+          "item": "minecraft:gold_nugget",
+          "count": 8
+        },
+        "requiredCapabilities": {
+          "hammer": 2
+        },
+        "improvements": {
+          "baseball_bat/gold_spike": 1
+        }
+      }
+    ]
+  }
+]

@@ -1181,7 +1181,84 @@ machete/fierymetal=Fiery machete
 machete/fierymetal.prefix=Fiery
 machete/knightmetal=Knightmetal machete
 machete/knightmetal.prefix=Knightmetal
+###############################
+# BASEBALL BAT
+###############################
+baseball_bat_schema.name=Baseball Bat
+baseball_bat_schema.description=Replace the regular blade with a baseball bat. Same as the original sword attribute, but it cannot be swept or used to cut things. There is a probability of stunning the creature, which increases according to the material level.
+baseball_bat_schema.slot1=Blade material
 
+sword/baseball_bat.name=Baseball Bat
+sword/baseball_bat.description=A blunt weapon that is different from other blades and can stun creatures.
+
+sword/baseball_bat.item_name=Baseball Bat
+
+baseball_bat/oak=Wooden Baseball Bat
+baseball_bat/oak.prefix=Wooden
+baseball_bat/spruce=Spruce Baseball Bat
+baseball_bat/spruce.prefix=Spruce
+baseball_bat/birch=Birch Baseball Bat
+baseball_bat/birch.prefix=Birch
+baseball_bat/jungle=Jungle Baseball Bat
+baseball_bat/jungle.prefix=Jungle
+baseball_bat/acacia=Acacia Baseball Bat
+baseball_bat/acacia.prefix=Acacia
+baseball_bat/dark_oak=Dark oak Baseball Bat
+baseball_bat/dark_oak.prefix=Dark oak
+baseball_bat/cobblestone=Cobblestone Baseball Bat
+baseball_bat/cobblestone.prefix=Cobblestone
+baseball_bat/stone=Stone Baseball Bat
+baseball_bat/stone.prefix=Stone
+baseball_bat/granite=Granite Baseball Bat
+baseball_bat/granite.prefix=Granite
+baseball_bat/diorite=Diorite Baseball Bat
+baseball_bat/diorite.prefix=Diorite
+baseball_bat/andesite=Andesite Baseball Bat
+baseball_bat/andesite.prefix=Andesite
+baseball_bat/flint=Flint Baseball Bat
+baseball_bat/flint.prefix=Flint
+baseball_bat/iron=Iron Baseball Bat
+baseball_bat/iron.prefix=Iron
+baseball_bat/gold=Golden Baseball Bat
+baseball_bat/gold.prefix=Golden
+baseball_bat/diamond=Diamond Baseball Bat
+baseball_bat/diamond.prefix=Diamond
+baseball_bat/obsidian=Obsidian Baseball Bat
+baseball_bat/obsidian.prefix=Obsidian
+baseball_bat/copper=Copper Baseball Bat
+baseball_bat/copper.prefix=Copper
+baseball_bat/tin=Tin Baseball Bat
+baseball_bat/tin.prefix=Tin
+baseball_bat/silver=Silver Baseball Bat
+baseball_bat/silver.prefix=Silver
+baseball_bat/nickel=Nickel Baseball Bat
+baseball_bat/nickel.prefix=Nickel
+baseball_bat/lead=Lead Baseball Bat
+baseball_bat/lead.prefix=Lead
+baseball_bat/bronze=Bronze Baseball Bat
+baseball_bat/bronze.prefix=Bronze
+baseball_bat/electrum=Electrum Baseball Bat
+baseball_bat/electrum.prefix=Electrum
+baseball_bat/steel=Steel Baseball Bat
+baseball_bat/steel.prefix=Steel
+baseball_bat/thaumium=Thaumium Baseball Bat
+baseball_bat/thaumium.prefix=Thaumium
+baseball_bat/ironwood=Ironwood Baseball Bat
+baseball_bat/ironwood.prefix=Ironwood
+baseball_bat/steeleaf=Steeleaf Baseball Bat
+baseball_bat/steeleaf.prefix=Steeleaf
+baseball_bat/fierymetal=Fiery Baseball Bat
+baseball_bat/fierymetal.prefix=Fiery
+baseball_bat/knightmetal=Knightmetal Baseball Bat
+baseball_bat/knightmetal.prefix=Knightmetal
+
+spike_schema.name=Spike
+spike_schema.description=Nail some spikes to the bat.Has a 30%% chance to cause the target to bleed for 4 damage over 2 seconds. Not effective against undead.
+spike_schema.slot1=Spike material
+baseball_bat/iron_spike.name=Iron Spike
+baseball_bat/iron_spike.description=Has a 30%% chance to cause the target to bleed for 4 damage over 2 seconds. Not effective against undead.\nDamage +1
+baseball_bat/gold_spike.name=Gold Spike
+baseball_bat/gold_spike.description=Has a 30%% chance to cause the target to bleed for 4 damage over 2 seconds. Not effective against undead.\nMagic capacity +10
 ###############################
 # DUPLEX HEAD HONING SHARED
 ###############################
