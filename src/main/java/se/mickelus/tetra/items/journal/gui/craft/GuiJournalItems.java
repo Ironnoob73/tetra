@@ -8,6 +8,7 @@ import se.mickelus.tetra.gui.animation.Applier;
 import se.mickelus.tetra.gui.animation.KeyframeAnimation;
 import se.mickelus.tetra.items.ItemModular;
 import se.mickelus.tetra.items.duplex_tool.ItemDuplexToolModular;
+import se.mickelus.tetra.items.simplex_tool.ItemSimplexToolModular;
 import se.mickelus.tetra.items.sword.ItemSwordModular;
 import se.mickelus.tetra.items.toolbelt.ItemToolbeltModular;
 
@@ -17,26 +18,32 @@ public class GuiJournalItems extends GuiElement {
 
     private final GuiJournalItem sword;
     private final GuiJournalItem toolbelt;
-    private final GuiJournalItem tools;
+    private final GuiJournalItem duplexTools;
+    private final GuiJournalItem simplexTools;
 
     public GuiJournalItems(int x, int y, int width, int height, Consumer<ItemModular> onItemSelect, Consumer<String> onSlotSelect) {
         super(x, y, width, height);
 
 
-        sword = new GuiJournalItem(-39, 0, ItemSwordModular.instance, I18n.format("journal.craft.sword"),
+        sword = new GuiJournalItem(-80, 0, 3,0,ItemSwordModular.instance, I18n.format("journal.craft.sword"),
                 () -> onItemSelect.accept(ItemSwordModular.instance), onSlotSelect);
         sword.setAttachment(GuiAttachment.topCenter);
         addChild(sword);
 
-        toolbelt = new GuiJournalItem(1, -40, ItemToolbeltModular.instance, I18n.format("journal.craft.toolbelt"),
+        toolbelt = new GuiJournalItem(0, -20, 4,0,ItemToolbeltModular.instance, I18n.format("journal.craft.toolbelt"),
                 () -> onItemSelect.accept(ItemToolbeltModular.instance), onSlotSelect);
         toolbelt.setAttachment(GuiAttachment.topCenter);
         addChild(toolbelt);
 
-        tools = new GuiJournalItem(41, 0, ItemDuplexToolModular.instance, I18n.format("journal.craft.tool"),
+        duplexTools = new GuiJournalItem(-60, -20, 2,0,ItemDuplexToolModular.instance, I18n.format("journal.craft.duplex_tool"),
                 () -> onItemSelect.accept(ItemDuplexToolModular.instance), onSlotSelect);
-        tools.setAttachment(GuiAttachment.topCenter);
-        addChild(tools);
+        duplexTools.setAttachment(GuiAttachment.topCenter);
+        addChild(duplexTools);
+
+        simplexTools = new GuiJournalItem(-60, 20, 1,0,ItemSimplexToolModular.instance, I18n.format("journal.craft.simplex_tool"),
+                () -> onItemSelect.accept(ItemSimplexToolModular.instance), onSlotSelect);
+        simplexTools.setAttachment(GuiAttachment.topCenter);
+        addChild(simplexTools);
     }
 
     public void animateOpen() {
@@ -55,30 +62,42 @@ public class GuiJournalItems extends GuiElement {
     public void changeItem(Item item) {
         if (item instanceof ItemSwordModular) {
             toolbelt.setVisible(false);
-            tools.setVisible(false);
+            duplexTools.setVisible(false);
+            simplexTools.setVisible(false);
 
             sword.setVisible(true);
             sword.setSelected(true);
         } else if (item instanceof ItemToolbeltModular) {
             sword.setVisible(false);
-            tools.setVisible(false);
+            duplexTools.setVisible(false);
+            simplexTools.setVisible(false);
 
             toolbelt.setVisible(true);
             toolbelt.setSelected(true);
         } else if (item instanceof ItemDuplexToolModular) {
             sword.setVisible(false);
             toolbelt.setVisible(false);
+            simplexTools.setVisible(false);
 
-            tools.setVisible(true);
-            tools.setSelected(true);
+            duplexTools.setVisible(true);
+            duplexTools.setSelected(true);
+        }else if (item instanceof ItemSimplexToolModular) {
+            sword.setVisible(false);
+            toolbelt.setVisible(false);
+            duplexTools.setVisible(false);
+
+            simplexTools.setVisible(true);
+            simplexTools.setSelected(true);
         }else {
             sword.setSelected(false);
             toolbelt.setSelected(false);
-            tools.setSelected(false);
+            duplexTools.setSelected(false);
+            simplexTools.setSelected(false);
 
             sword.setVisible(true);
             toolbelt.setVisible(true);
-            tools.setVisible(true);
+            duplexTools.setVisible(true);
+            simplexTools.setVisible(true);
         }
     }
 }

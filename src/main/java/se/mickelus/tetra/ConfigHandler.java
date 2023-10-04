@@ -30,6 +30,8 @@ public class ConfigHandler {
 
     public static int honeDuplexBase = 260;
     public static int honeDuplexIntegrityMultiplier = 180;
+    public static int honeSimplexBase = 260;
+    public static int honeSimplexIntegrityMultiplier = 180;
 
     @Mod.EventBusSubscriber
     private static class EventHandler {
@@ -40,6 +42,7 @@ public class ConfigHandler {
 
                 ItemDuplexToolModular.instance.updateConfig(honeDuplexBase, honeDuplexIntegrityMultiplier);
                 ItemSwordModular.instance.updateConfig(honeSwordBase, honeSwordIntegrityMultiplier);
+                ItemDuplexToolModular.instance.updateConfig(honeSimplexBase, honeSimplexIntegrityMultiplier);
             }
         }
     }

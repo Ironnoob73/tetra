@@ -4,6 +4,7 @@ import net.minecraft.client.resources.I18n;
 import se.mickelus.tetra.items.ItemModular;
 import se.mickelus.tetra.items.duplex_tool.ItemDuplexToolModular;
 import se.mickelus.tetra.items.journal.GuiJournalRootBase;
+import se.mickelus.tetra.items.simplex_tool.ItemSimplexToolModular;
 import se.mickelus.tetra.items.sword.ItemSwordModular;
 import se.mickelus.tetra.items.toolbelt.ItemToolbeltModular;
 import se.mickelus.tetra.module.schema.UpgradeSchema;
@@ -130,7 +131,9 @@ public class GuiJournalCraftRoot extends GuiJournalRootBase {
             } else if (item instanceof ItemToolbeltModular) {
                 result.add(I18n.format("journal.craft.toolbelt"));
             } else if (item instanceof ItemDuplexToolModular) {
-                result.add(I18n.format("journal.craft.tool"));
+                result.add(I18n.format("journal.craft.duplex_tool"));
+            } else if (item instanceof ItemSimplexToolModular) {
+                result.add(I18n.format("journal.craft.simplex_tool"));
             }
 
             if (slot != null) {

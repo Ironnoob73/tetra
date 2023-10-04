@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class GuiJournalItem extends GuiClickable {
-    private static final String WORKBENCH_TEXTURE = "textures/gui/workbench.png";
+    private static final String JOURNAL_ITEM = "textures/gui/journal_item.png";
 
     GuiElement slotGroup;
 
@@ -25,13 +25,13 @@ public class GuiJournalItem extends GuiClickable {
     private boolean isSelected = false;
     private final GuiTexture backdrop;
 
-    public GuiJournalItem(int x, int y, ItemModular item, String label, Runnable onSelect, Consumer<String> onSlotSelect) {
+    public GuiJournalItem(int x, int y,int texX, int texY, ItemModular item, String label, Runnable onSelect, Consumer<String> onSlotSelect) {
         super(x, y, 64, 64, onSelect);
 
         selectAnimations = new ArrayList<>();
         deselectAnimations = new ArrayList<>();
 
-        backdrop = new GuiTexture(0, 0, 52, 52, WORKBENCH_TEXTURE);
+        backdrop = new GuiTexture(0, 0, 38, 38,texX*38,texY*38, JOURNAL_ITEM);
         backdrop.setAttachment(GuiAttachment.middleCenter);
         addChild(backdrop);
 

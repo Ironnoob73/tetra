@@ -15,3 +15,7 @@ Now the hammer hits the log to get the crafting table
 The old "Crafting Table" will be deprecated, and the old "Crafting Table" can be converted into a new Workbench by right-clicking with a hammer
 <li>为剑型工具增加棒球棒部件，攻击生物时概率造成击晕（缓慢+虚弱+反胃）<br>
 Add baseball bat parts to sword modular tools, and stun (slowness + weakness + nausea) when attacking mobs.
+<li>为全息球的制作页面添加背景<br>
+Add a background to the holosphere's craft page
+<li>添加单头工具<br>
+Add Simplex tool

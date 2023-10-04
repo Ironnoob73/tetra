@@ -49,15 +49,23 @@ tetra.general.honeduplexintegritymultiplier.tooltip=Integrity multiplier for too
 item.journal.name=Holosphere
 item.journal.tooltip1=At a touch the sphere projects diagrams and glyphs onto nothingness
 item.journal.tooltip2=[Right click to use]
+
+journal.craft.title=CRAFT
+journal.structures.title=STRUCTURES
+journal.system.title=SYSTEM
+
 journal.craft.breadcrumb.root=Items
 journal.craft.sword=Blades
 journal.craft.toolbelt=Toolbelts
-journal.craft.tool=Tools
+journal.craft.duplex_tool=Duplex
+journal.craft.simplex_tool=Simplex
 journal.craft.slot=Slot
 journal.craft.requirements=Requirements
 journal.craft.improvements=Improvements
 journal.craft.stats=Stats
 journal.craft.variants=Variants
+
+journal.wip.description=Stay tuned
 
 ###############################
 # WORKBENCH

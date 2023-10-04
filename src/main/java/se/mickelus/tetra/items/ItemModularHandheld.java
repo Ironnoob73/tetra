@@ -631,7 +631,7 @@ public class ItemModularHandheld extends ItemModular {
     public boolean canHarvestBlock(IBlockState blockState, ItemStack itemStack) {
         if (pickaxeMaterials.contains(blockState.getMaterial())) {
             return getHarvestLevel(itemStack, "pickaxe", null, null) >= 0;
-        } else if (blockState.getBlock().equals(Blocks.WEB)) {
+        }else if (blockState.getBlock().equals(Blocks.WEB)) {
             return getHarvestLevel(itemStack, "cut", null, null) >= 0;
         }
         return false;

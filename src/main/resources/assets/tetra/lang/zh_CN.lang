@@ -1588,15 +1588,23 @@ tetra.general.honeduplexintegritymultiplier.tooltip=Integrity multiplier for too
 item.journal.name=全息球
 item.journal.tooltip1=轻轻一碰，球体就会将图表和字形投射到虚无上。
 item.journal.tooltip2=【右键使用】
+
+journal.craft.title=制作
+journal.structures.title=结构
+journal.system.title=系统
+
 journal.craft.breadcrumb.root=物品
 journal.craft.sword=刀剑
 journal.craft.toolbelt=工具带
-journal.craft.tool=工具
+journal.craft.duplex_tool=双头
+journal.craft.simplex_tool=单头
 journal.craft.slot=格
 journal.craft.requirements=依赖
 journal.craft.improvements=改进
 journal.craft.stats=状态
 journal.craft.variants=变种
+
+journal.wip.description=敬请期待
 
 ###############################
 # CAPABILITIES
